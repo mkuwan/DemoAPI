@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  demoapi:
+    image: ${DOCKER_REGISTRY-}demoapi
+    build:
+      context: .
+      dockerfile: DemoAPI/Dockerfile
+
+  nginx:
+    image: ${DOCKER_REGISTRY-}nginx
+    build:
+      context: .
+      dockerfile: Nginx/Dockerfile

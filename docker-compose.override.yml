@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  demoapi:
+    expose:
+      - "5001"
+    networks:
+      - front-back
+
+  nginx:
+    ports:
+     - 80:80 
+    networks:
+      - front-back
+
+networks:
+  front-back:
+    driver: bridge
